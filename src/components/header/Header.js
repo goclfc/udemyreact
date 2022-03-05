@@ -3,10 +3,13 @@ import {AppBar,Toolbar,IconButton} from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import SideDrawer from '../sideDrawer/SideDrawer';
 const Header = () => {
-    const {drawerOpen,setDrawerOpen} = useState(false);
-    const toggleDrawer = (value)=>{
+    const [drawerOpen,setDrawerOpen] = useState(false)
+
+
+    const toggleDrawer = (value) => {
         setDrawerOpen(value)
     }
+
     return (
         <AppBar 
             position="fixed"
@@ -33,6 +36,7 @@ const Header = () => {
                 </IconButton>
             <SideDrawer 
             open = {drawerOpen}
+            onClose={(value) => toggleDrawer(value)}
             />
             </Toolbar>
         </AppBar>
