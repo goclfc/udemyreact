@@ -1,5 +1,6 @@
 import React from 'react';
 import Slider from './Slider';
+import TimeUntill from './TimeUntill';
 
 const Featured = () => {
     return(
@@ -10,6 +11,7 @@ const Featured = () => {
                     Ariana Grande
                 </div>
             </div>
+        <TimeUntill />
         </div>
     )
 }
