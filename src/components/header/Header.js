@@ -4,17 +4,30 @@ import MenuIcon from '@mui/icons-material/Menu';
 import SideDrawer from '../sideDrawer/SideDrawer';
 const Header = () => {
     const [drawerOpen,setDrawerOpen] = useState(false)
-
+    const [headerShow, setHeaderShow] = useState(false)
+    const scrollHandler = ()=>{
+        if(window.scrollY > 0){
+            setHeaderShow(true)
+        }
+        else{
+            setHeaderShow(false)
+        }
+    }
 
     const toggleDrawer = (value) => {
         setDrawerOpen(value)
     }
 
+    useEffect(()=>{
+        window.addEventListener('scroll',scrollHandler)
+    },[])
+
     return (
         <AppBar 
             position="fixed"
             style={{
-                backgroundColor:"black",
+                backgroundColor: headerShow ? "black":'transparent',
+                boxShadow:'none',
                 padding:"10px"
             }}
         >
