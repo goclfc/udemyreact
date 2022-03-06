@@ -6,6 +6,7 @@ import Venue from './components/venue/Venue'
 import Highlights from './components/highligts';
 import Pricing from './components/pricing';
 import Location from './components/location';
+import { Element } from 'react-scroll'
 import '../src/resources/style.css'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -13,21 +14,26 @@ const App = () => {
   return (
     <div className="App">
         <Header />
-      <>    
-        <Featured />
-      </>
-      <>
-        <Venue />
-      </>
-      <>
-        <Highlights />
-      </>
-      <>
-        <Pricing />
-      </>
-      <>
-        <Location />
-      </>
+        <Element name='featured'>
+          <Featured />
+        </Element>
+   
+        <Element name='venuenfo'>
+          <Venue />
+        </Element>
+
+        <Element name='highlights'>
+          <Highlights />
+        </Element>
+
+        <Element name='pricing'>
+          <Pricing />
+        </Element>
+
+        <Element name='location'>
+          <Location />
+        </Element>
+        
       <Footer />
     </div>
   );
