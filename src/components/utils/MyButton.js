@@ -14,9 +14,10 @@ const MyButton =(props)=>{
        >
            {props.iconTicket ?
            <img 
-           src={icon_ticket} 
-           className='iconImage'
-           alt='purchase_icon'/>
+                src={icon_ticket} 
+                className='iconImage'
+                alt='purchase_icon'
+           />
            :null
 
            }
